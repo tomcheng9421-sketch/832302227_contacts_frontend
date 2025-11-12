@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://eight32302227-contacts-backend.onrender.com/api';
 
 const contactsList = document.getElementById('contacts-list');
 const addForm = document.getElementById('add-form');
