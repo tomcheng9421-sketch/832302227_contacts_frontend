@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的通讯录</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fas fa-address-book"></i> 我的通讯录</h1>
+
+    <div class="filter-section">
+        <input type="text" id="filter-name" placeholder="按姓名选择...">
+        <select id="filter-tag">
+            <option value="">按标签选择</option>
+            <option value="家人">家人</option>
+            <option value="朋友">朋友</option>
+            <option value="同事">同事</option>
+            <option value="同学">同学</option>
+            <option value="其他">其他</option>
+        </select>
+    </div>
+
+    <form id="add-form" class="contact-form card">
+        <h2><i class="fas fa-user-plus"></i> 添加新联系人</h2>
+        <input type="text" id="add-name" placeholder="姓名" required>
+        <input type="tel" id="add-phone" placeholder="电话" required>
+        <input type="text" id="add-address" placeholder="地址">
+        <input type="email" id="add-email" placeholder="邮箱">
+        <div class="tags-input">
+            <label for="add-tags">标签:</label>
+            <div id="add-tag-checkboxes">
+                <input type="checkbox" id="tag-add-family" value="家人"> <label for="tag-add-family">家人</label>
+                <input type="checkbox" id="tag-add-friend" value="朋友"> <label for="tag-add-friend">朋友</label>
+                <input type="checkbox" id="tag-add-colleague" value="同事"> <label for="tag-add-colleague">同事</label>
+                <input type="checkbox" id="tag-add-student" value="同学"> <label for="tag-add-student">同学</label>
+                <input type="checkbox" id="tag-add-other" value="其他"> <label for="tag-add-other">其他</label>
+            </div>
+        </div>
+        <button type="submit"><i class="fas fa-plus-circle"></i> 添加</button>
+    </form>
+
+    <form id="edit-form" class="contact-form card" style="display: none;">
+        <h2><i class="fas fa-user-edit"></i> 修改联系人</h2>
+        <input type="hidden" id="edit-id">
+        <input type="text" id="edit-name" placeholder="姓名" required>
+        <input type="tel" id="edit-phone" placeholder="电话" required>
+        <input type="text" id="edit-address" placeholder="地址">
+        <input type="email" id="edit-email" placeholder="邮箱">
+        <div class="tags-input">
+            <label for="edit-tags">标签:</label>
+            <div id="edit-tag-checkboxes">
+                <input type="checkbox" id="tag-edit-family" value="家人"> <label for="tag-edit-family">家人</label>
+                <input type="checkbox" id="tag-edit-friend" value="朋友"> <label for="tag-edit-friend">朋友</label>
+                <input type="checkbox" id="tag-edit-colleague" value="同事"> <label for="tag-edit-colleague">同事</label>
+                <input type="checkbox" id="tag-edit-student" value="同学"> <label for="tag-edit-student">同学</label>
+                <input type="checkbox" id="tag-edit-other" value="其他"> <label for="tag-edit-other">其他</label>
+            </div>
+        </div>
+        <button type="submit"><i class="fas fa-save"></i> 保存修改</button>
+        <button type="button" id="cancel-edit"><i class="fas fa-times-circle"></i> 取消</button>
+    </form>
+
+    <div class="list-container card">
+        <h2><i class="fas fa-users"></i> 联系人列表</h2>
+        <ul id="contacts-list">
+        </ul>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
